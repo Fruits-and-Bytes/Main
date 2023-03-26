@@ -1,3 +1,12 @@
+require('dotenv').config();
+require('./config/database');
+const Destination = require('./models/destination');
+const User = require('./models/user');
+
+let destinations = await Destination.find({});
+
+console.log(destinations);
+
 // crud-helper.js
 
 // Used to perform CRUD external to the application
