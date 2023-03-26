@@ -14,10 +14,10 @@ const userSchema = new Schema({
 });
 
 const wishlistSchema = new Schema({
-  destName: {
+  destName: [{
     type: Schema.Types.ObjectId,
     ref: 'Destination'
-  }
+  }]
   }, {
     timestamps: true
 })
