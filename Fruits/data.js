@@ -1,6 +1,6 @@
 exports.destinations = [
-    { name: 'Kuwait', fruit: 'Date', fruitImg: , attraction: 'Kubbar Island', destImg: , seSalary: ,  }
-    { name: 'Nicaragua', fruit: 'Papaya', fruitImg: , attraction: 'Islets of Granada', destImg: , seSalary: ,  }
+    { name: 'Kuwait', fruit: 'Date', fruitImg: , attraction: 'Kubbar Island', destImage: , seSalary: ,  }
+    { name: 'Nicaragua', fruit: 'Papaya', fruitImg: , attraction: 'Islets of Granada', destImage: , seSalary: ,  }
     { name: 'Canary Islands', fruit: 'Banana', fruitImg: , attraction: 'Tenerife for dolphin and whale watching', destImg: , seSalary: ,  }
     { name: 'Pakistan', fruit: 'Mango', fruitImg: , attraction: 'Hunza Valley', destImg: , seSalary: ,  }
     { name: 'Japan', fruit: 'Persimmons', fruitImg: , attraction: 'Kyoto', destImg: , seSalary: ,  }
