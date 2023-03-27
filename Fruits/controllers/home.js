@@ -2,10 +2,17 @@ const Destination = require('../models/destination');
 const User = require('../models/user');
 
 async function index(req, res) {
-        const destinations = await Destination.find({});
-        res.render('home', { title: 'Fruits & Bytes', destinations });
-      }
+  const destinations = await Destination.find({});
+  res.render('home', { title: 'Fruits & Bytes', destinations });
+}
 
-  module.exports = {
-    index
-  }
+async function show(req, res) {
+  const destination = await Destination.findById(req.params.id);
+  res.render('show', { title: destination.name, destination })
+}
+
+
+module.exports = {
+  index,
+  show,
+}  
