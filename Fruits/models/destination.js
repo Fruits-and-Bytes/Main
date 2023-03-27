@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const destinationSchema = new Schema({
     name: String, 
-    destImage: String,  
+    destinationImage: String,  
     fruit: String,
     fruitImage: String,
     seSalary: Number,
