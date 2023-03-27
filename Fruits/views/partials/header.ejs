@@ -13,12 +13,12 @@
         <a href="/">
             <img src="/icons/home.svg">
         </a>
-        <!-- <% //if (user) { %> -->
+        <% if (user) { %>
             <a href="/wishlist">
                 <img src="/icons/wishlist.svg">
             </a>
             <a href="/logout">LOG OUT</a>
-        <!-- <% //} else { %> -->
+        <% } else { %>
             <a href="/auth/google" class="login">LOG IN&nbsp;<img src="/icons/login.svg"></a>
-        <!-- <% //} %> -->
+        <% } %>
     </nav>
