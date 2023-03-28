@@ -5,11 +5,15 @@ function showList(req, res) {
     res.render('wishlist', {title: 'My Wishlist'});
 };
 
-async function create(req, res) {  
-    if (User?.wishlist.equals(req.user)) {
-        User.wishlist.push(req.params.id);
-        await User.save();
-        res.redirect('/wishlist');    
+async function create(req, res) { 
+    const id = req.query.id;
+    const destination = await Destination.find({_id: `${id}`});
+    if (req.user) {
+        req.user.wishlist.push(destination);
+        await req.user.save();
+        res.redirect('/wishlist');
+    } else {
+        res.redirect('/auth/google');
     }
 };
 

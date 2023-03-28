@@ -8,7 +8,7 @@
     <img src="../<%= destination.attractionImage %>.jpg" alt="Attraction Image">
 
     <br></br>
-    <form method="POST" action="/wishlist">
+    <form method="POST" action="/wishlist?id=<%= destination._id %>">
         
     <button type="submit">Add to Wishlist</button>
     </form>    

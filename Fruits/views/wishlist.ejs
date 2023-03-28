@@ -2,5 +2,17 @@
 
 <h1>Your Wishlist</h1>
 
+<% if(user.wishlist.length > 0) {%>
+    <% user.wishlist.forEach(function(destination) { %>
+        <% destination.forEach(function(detail){ %>
+            <%= detail.name %>
+            <form action="/wishlist?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+                </form>
+            <br></br>
+    <% })}) %>
+    <% } else { %>
+        <p>Go add some countries</p>
+        <% } %>
 
 <%- include('./partials/footer') %>

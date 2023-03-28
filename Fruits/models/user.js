@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const wishlistSchema = new Schema({
-    destName: 
-        {type: Schema.Types.ObjectId,
-        ref: 'Destination'}
-  }, {
-    timestamps: true
-});
+// const wishlistSchema = new Schema({
+//     destName: 
+//         {type: Schema.Types.ObjectId,
+//         ref: 'Destination'}
+//   }, {
+//     timestamps: true
+// });
 
 const userSchema = new Schema({
     name: String,
@@ -17,7 +17,9 @@ const userSchema = new Schema({
     },
     email: String,
     avatar: String,
-    wishlist: [wishlistSchema]
+    wishlist: [{
+        type: Object
+    }]
     }, {
     timestamps: true
 });

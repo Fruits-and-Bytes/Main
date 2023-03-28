@@ -6,5 +6,6 @@ router.get('/wishlist', destinationsCtrl.showList);
 
 router.post('/wishlist', destinationsCtrl.create);
 
-module.exports = router;
+router.delete('/wishlist', destinationsCtrl.delete);
 
+module.exports = router;

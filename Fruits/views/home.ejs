@@ -5,10 +5,11 @@
 
     <% destinations.forEach(function (d) { %>
       <form action="/<%= d._id %>/show" method="GET"> 
-        <div onclick="window.location.href=`/<%= d._id %>/show`">
+        <!-- <div onclick="window.location.href=`/<%= d._id %>/show`"> -->
           <%= d.name %>
           <img src="../<%= d.destinationImage %>.jpg" alt="Destination Image">
-        </div>
+        <!-- </div> -->
+          <button type="submit">View Country</button>
       </form>
       <br></br>
     <% }); %>
