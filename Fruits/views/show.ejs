@@ -8,6 +8,8 @@
     <img src="../<%= destination.attractionImage %>.jpg" alt="Attraction Image">
 
     <br></br>
-    <button>Add to Wishlist</button>
-
+    <form method="POST" action="/wishlist">
+        
+    <button type="submit">Add to Wishlist</button>
+    </form>    
 <%- include('./partials/footer')%>
