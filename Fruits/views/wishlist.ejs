@@ -3,15 +3,14 @@
 <h1>Your Wishlist</h1>
 
 <% if(user.wishlist.length > 0) {%>
-    <% user.wishlist.forEach(function(destination) { %>
-        <% destination.forEach(function(detail){ %>
-            <%= detail.name %>
-            <form action="/wishlist/<%=detail.name%>?_method=DELETE" method="POST">
-                <input type="hidden" name="destId" value="<%= detail._id %>">
+        <% user.wishlist.forEach(function(dest){ %>
+            <%= dest.name %>
+            <form action="/wishlist/<%= dest.name %>?_method=DELETE" method="POST">
+                <input type="hidden" name="destId" value="<%= dest.name %>">
                 <button type="submit">X</button>
                 </form>
             <br></br>
-    <% })}) %>
+    <% }) %>
     <% } else { %>
         <p>Go add some countries</p>
         <% } %>
