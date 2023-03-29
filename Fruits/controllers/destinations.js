@@ -21,10 +21,26 @@ async function deleteDestination(req, res, next) {
     try {
         const destName = await req.params.name;
         console.log(destName);
-        const destination = await req.user.wishlist.find((dest) => dest.name === destName);
-        console.log('this is dest', destination);
+        let destination = await req.user.wishlist;
+        let deletedDestination;
+        for(let i = 0; i < destination.length; i++) {
+            for(let j = 0; j < destination[i].length; j++) {
+                if(destination[i][j].name == destName) {
+                    deletedDestination = destination[i][j]; 
+                    break;
+                }
+            }
+            if(deleteDestination) {
+                break;
+            }
+        }
+        console.log('this is dest', deletedDestination);
         if (!destination) throw new Error('Destination not found');
-        req.user.wishlist.remove(destination);
+        destination.forEach(function(d) {
+            const index = d.indexOf(deletedDestination);
+            console.log('this is the index', index);
+            d.splice(index, 1);
+        });
         await req.user.save();
         res.redirect('/wishlist');
     } catch(err) {
@@ -32,6 +48,7 @@ async function deleteDestination(req, res, next) {
         return next(err);
     }
 };
+
 
 module.exports = {
     showList,
