@@ -17,7 +17,14 @@ async function create(req, res) {
     }
 };
 
+async function deleteDestination(req, res) {
+    const destId = req.body.destId;
+    const destination = await req.user.wishlist.findById(destId);
+    console.log('THIS IS DEST IDDDDDDD', destination);
+}
+
 module.exports = {
     showList,
-    create
+    create,
+    delete: deleteDestination,
 };
