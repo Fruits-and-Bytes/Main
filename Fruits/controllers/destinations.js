@@ -7,14 +7,9 @@ function showList(req, res) {
 
 async function create(req, res) { 
     const id = req.query.id;
-<<<<<<< HEAD
     const destination = await Destination.find({_id: `${id}`});
     if (req.user) {
         req.user.wishlist.push(destination);
-=======
-    if (req.user) {
-        req.user.wishlist.push(id);
->>>>>>> f853eca137a6d1a88e68904354714208e9737f88
         await req.user.save();
         res.redirect('/wishlist');
     } else {
@@ -22,11 +17,21 @@ async function create(req, res) {
     }
 };
 
-async function deleteDestination(req, res) {
-    const destId = req.body.destId;
-    const destination = await req.user.wishlist.findById(destId);
-    console.log('THIS IS DEST IDDDDDDD', destination);
-}
+async function deleteDestination(req, res, next) {
+    try {
+        const destName = await req.params.name;
+        console.log(destName);
+        const destination = await req.user.wishlist.find((dest) => dest.name === destName);
+        console.log('this is dest', destination);
+        if (!destination) throw new Error('Destination not found');
+        req.user.wishlist.remove(destination);
+        await req.user.save();
+        res.redirect('/wishlist');
+    } catch(err) {
+        console.log(err);
+        return next(err);
+    }
+};
 
 module.exports = {
     showList,

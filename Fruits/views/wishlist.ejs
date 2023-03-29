@@ -6,8 +6,8 @@
     <% user.wishlist.forEach(function(destination) { %>
         <% destination.forEach(function(detail){ %>
             <%= detail.name %>
-            <form action="/wishlist?_method=DELETE" method="POST">
-                <input type="hidden" name="destId" value="<%= detail.id %>">
+            <form action="/wishlist/<%=detail.name%>?_method=DELETE" method="POST">
+                <input type="hidden" name="destId" value="<%= detail._id %>">
                 <button type="submit">X</button>
                 </form>
             <br></br>

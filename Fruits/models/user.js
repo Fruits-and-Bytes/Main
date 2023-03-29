@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
 // const wishlistSchema = new Schema({
 //     destName: 
 //         {type: Schema.Types.ObjectId,
@@ -18,7 +19,7 @@ const userSchema = new Schema({
     email: String,
     avatar: String,
     wishlist: [{
-        type: Object
+        type: Object,
     }]
     }, {
     timestamps: true

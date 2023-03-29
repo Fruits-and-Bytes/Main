@@ -5,7 +5,7 @@ const User = require('./models/user');
 
 let destinations = await Destination.find({});
 
-console.log(destinations);
+// console.log(destinations);
 
 // crud-helper.js
 
