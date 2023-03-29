@@ -1,5 +1,4 @@
 const Destination = require('../models/destination');
-const user = require('../models/user');
 const User = require('../models/user');
 
 function showList(req, res) {
@@ -35,9 +34,19 @@ async function deleteDestination(req, res, next) {
     }
 };
 
+async function update(req, res) {
+    const destId = req.params.id;
+    console.log(destId);
+    const newSalary = req.body.newSalary;
+    console.log(newSalary);
+    await Destination.findByIdAndUpdate(destId, {seSalary: newSalary});
+    res.redirect(`/${destId}/show`);
+}
+
 
 module.exports = {
     showList,
     create,
     delete: deleteDestination,
+    update,
 };
