@@ -2,16 +2,23 @@
 
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-
-    <% destinations.forEach(function (d) { %>
-      <form action="/<%= d._id %>/show" method="GET"> 
-        <!-- <div onclick="window.location.href=`/<%= d._id %>/show`"> -->
-          <%= d.name %>
-          <img src="../<%= d.destinationImage %>.jpg" alt="Destination Image">
-        <!-- </div> -->
-          <button type="submit">View Country</button>
-      </form>
-      <br></br>
-    <% }); %>
+    <div class="container">
+      <% destinations.forEach(function (d) { %>
+        <form action="/<%= d._id %>/show" method="GET"> 
+          <!-- <div onclick="window.location.href=`/<%= d._id %>/show`"> -->
+            <div class="row">
+              <h2 class="text-center"><%= d.name %></h2> 
+            </div>
+            <div class="row">
+              <img src="../<%= d.destinationImage %>.jpg" alt="Destination Image">
+            </div>
+          <!-- </div> -->
+          <div class="row text-center">
+            <button type="submit">View Country</button>
+          </div>
+        </form>
+        <br></br>
+      <% }); %>
+    </div>
 
 <%- include('./partials/footer')%>
