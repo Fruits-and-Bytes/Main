@@ -1,0 +1,24 @@
+<%- include('./partials/header')%>
+
+<h1>Ho</h1>
+
+<form action="/" method="POST">
+    <label>Country Name:</label>
+    <p>We recommend grabbing your photos from <a target="_blank" href="https://unsplash.com/">Unsplash</a></p>
+    <input type="text" name="name">
+    <label>Link to a photo of destination:</label>
+    <input type="text" name="destinationImage">
+    <label>Popular Fruit of the Destination:</label>
+    <input type="text" name="fruit">
+    <label>Link to a photo of fruit:</label>
+    <input type="text" name="fruitImage">
+    <label>What is a Popular Attraction Here?</label>
+    <input type="text" name="attraction">
+    <label>Link to a Photo of the Attraction:</label>
+    <input type="text" name="attractionImage">
+    <label>What's the Average Salary of a Software Engineer Here?</label>
+    <input type="number" name="seSalary">
+    <input type="submit" value="Add Destination">
+</form>
+
+<%- include('./partials/footer')%>
