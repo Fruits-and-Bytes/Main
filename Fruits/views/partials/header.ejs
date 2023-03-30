@@ -9,16 +9,29 @@
     <title><%= title %></title>
 </head>
 <body>
-    <nav class="navbar-nav">
-        <a href="/">
-            <img src="/icons/home.svg">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img src="/icons/home.svg">Home
         </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <% if (user) { %>
-            <a href="/wishlist">
-                <img src="/icons/wishlist.svg">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/wishlist">
+                <img src="/icons/wishlist.svg">Wishlist<span class="sr-only">(current)</span>
+                </li>
             </a>
-            <a href="/logout">LOG OUT</a>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">LOG OUT</a>
+            </li>
         <% } else { %>
-            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="/icons/login.svg"></a>
+            <li class="nav-item">
+                <a class="navbar-brand" href="/auth/google" class="login"><img src="/icons/login.svg">LOG IN&nbsp;</a>
+            </li>
         <% } %>
+        </ul>
+        </div>
     </nav>

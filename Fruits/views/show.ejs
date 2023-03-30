@@ -5,7 +5,7 @@
     <img src="../<%= destination.fruitImage %>.jpg" alt = "Fruit Image">
     <%= destination.seSalary %>
     <form method="POST" action="/<%= destination._id %>/show?_method=PUT">
-        <input name="newSalary" type="text" value="Type Here">
+        <input name="newSalary" type="number" value="Type Here">
         <input type="submit" value="Update Salary">
     </form>
     <%= destination.attraction %>
