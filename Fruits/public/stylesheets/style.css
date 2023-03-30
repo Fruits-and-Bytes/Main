@@ -299,8 +299,8 @@ body {
 
 .home {
     width: 100%;
-    height: 70vh;
-    /* background-image: url(https://i.pinimg.com/originals/e3/1a/65/e31a65c81e8111b1d9ab308e5bfd71ee.gif); */
+    height: 80vh;
+    background-image: url(https://i.pinimg.com/originals/54/0f/e8/540fe8018a24419b0d1565446ecf4130.gif);
     background-position: center top;
 	background-size:cover;
 }
