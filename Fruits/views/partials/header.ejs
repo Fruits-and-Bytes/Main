@@ -9,29 +9,56 @@
     <title><%= title %></title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">
-            <img src="/icons/home.svg">Home
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <% if (user) { %>
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/wishlist">
-                <img src="/icons/wishlist.svg">Wishlist<span class="sr-only">(current)</span>
-                </li>
-            </a>
-            <li class="nav-item">
-                <a class="nav-link" href="/logout">LOG OUT</a>
-            </li>
-        <% } else { %>
-            <li class="nav-item">
-                <a class="navbar-brand" href="/auth/google" class="login"><img src="/icons/login.svg">LOG IN&nbsp;</a>
-            </li>
-        <% } %>
-        </ul>
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="/">Fruits & Bytes</a>
+                <img src="/icons/globe.png">
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <% if (user) { %>
+                        <li><a href="/wishlist">Wishlist
+                            <!-- <img src="/icons/wishlist.svg"> -->
+                        </a></li>
+                        <li><a href="/logout">Log Out</a></li>
+                    <% } else { %>
+                        <li><a href="/auth/google" class="login">Login&nbsp;</a></li>
+                    <% } %>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
         </div>
     </nav>
+
+    <section class="home">
+    </section>
+
+<!-- Jquery needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+
+        $('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+
+    });
+    </script>
+    
