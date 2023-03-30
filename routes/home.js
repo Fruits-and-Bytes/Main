@@ -7,6 +7,9 @@ router.get('/', homeCtrl.index);
 // GET for show page
 router.get('/:id/show', homeCtrl.show);
 
+
+
+
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
     // Which passport strategy is being used?

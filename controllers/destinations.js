@@ -43,10 +43,31 @@ async function update(req, res) {
     res.redirect(`/${destId}/show`);
 }
 
+function newDest(req, res) {
+    res.render('new', { title: 'New Destination', Destination, errorMesg: '' });
+  }
+
+async function createDestination(req, res) {
+    // remove empty properties 
+    for (let key in req.body) {
+        if (req.body[key] === '') delete req.body[key];
+    }
+    try {
+        await Destination.create(req.body);
+        // redirect to the new destination
+        res.redirect('/', 200, { Destination });
+    } catch (err) {
+        console.log(err);
+        res.render('/new', { errorMsg: err.message });
+    }
+}
+
 
 module.exports = {
     showList,
     create,
     delete: deleteDestination,
     update,
+    createDestination,
+    new: newDest
 };

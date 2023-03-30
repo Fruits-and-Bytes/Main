@@ -23,7 +23,11 @@
             </div> 
           </a>
           <% }); %>      
-
+    <% if(user) { %>
+      <a href="/new">Add A Country to Make this List More Comprehensive!</a>
+    <% } else { %>
+      <a href="/auth/google" class="login">Login to Add Countries to this List!</a>
+      <% } %>
     <!-- ---- -->
     <div class="projcard-container">
 		
