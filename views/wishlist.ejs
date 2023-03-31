@@ -1,18 +1,56 @@
 <%- include('./partials/header') %>
 
-<h1>Your Wishlist</h1>
-
 <% if(user.wishlist.length > 0) {%>
-        <% user.wishlist.forEach(function(dest){ %>
-            <%= dest.name %>
-            <form action="/wishlist/<%= dest.name %>?_method=DELETE" method="POST">
-                <input type="hidden" name="destId" value="<%= dest.name %>">
-                <button type="submit">X</button>
+    <ol class="list-group list-group-numbered">
+        <h1>Your Wishlist</h1>
+        <br>
+    <% user.wishlist.forEach(function(dest){ %>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold"><%= dest.name %></div>
+            </div>
+            <span class="badge bg-primary rounded-pill">
+                <form action="/wishlist/<%= dest.name %>?_method=DELETE" method="POST">
+                <button type="submit" type="hidden">X</button>
                 </form>
-            <br></br>
-    <% }) %>
+            </span>
+            </li>
+
+            <% }) %>
+        </ol>
     <% } else { %>
         <p>Go add some countries</p>
         <% } %>
+
+<style>
+    .list-group {
+        padding-top: 10rem;
+        padding-left: 10rem;
+        width: 60%;
+    }
+
+    .list-group-item {
+        height: 6.5rem;
+        font-size: 2rem;
+        opacity:80%;
+    }
+
+    .list-group button {
+
+    background: transparent;
+    border: none !important;
+    font-size:2rem;
+    }
+
+    body {
+        background-image: url(https://images.unsplash.com/photo-1493815793585-d94ccbc86df8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1673&q=80);
+    }
+
+    h1 {
+        color: grey;
+    }
+
+
+</style>
 
 <%- include('./partials/footer') %>
