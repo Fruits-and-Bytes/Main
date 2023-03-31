@@ -1,24 +1,45 @@
 <%- include('./partials/header')%>
 
 
-
-<form action="/" method="POST">
-    <label>Country Name:</label>
+<div class="container d-flex justify-content-center">
+<form class="form" action="/" method="POST">
     <p>We recommend grabbing your photos from <a target="_blank" href="https://unsplash.com/">Unsplash</a></p>
-    <input type="text" name="name">
-    <label>Link to a photo of destination:</label>
-    <input type="text" name="destinationImage">
-    <label>Popular Fruit of the Destination:</label>
-    <input type="text" name="fruit">
-    <label>Link to a photo of fruit:</label>
-    <input type="text" name="fruitImage">
-    <label>What is a Popular Attraction Here?</label>
-    <input type="text" name="attraction">
-    <label>Link to a Photo of the Attraction:</label>
-    <input type="text" name="attractionImage">
-    <label>What's the Average Salary of a Software Engineer Here?</label>
-    <input type="number" name="seSalary">
-    <input type="submit" value="Add Destination">
-</form>
+    <div class="form-group">
+      <label for="name">Country Name:</label>
+      <input type="text" class="form-control" name="name" required>
+    </div><br>
+    <div class="form-group">
+      <label for="destinationImage">Link to a photo of destination:</label>
+      <input type="text" class="form-control" name="destinationImage" required>
+    </div><br>
+    <div class="form-group">
+      <label for="fruit">Popular Fruit of the Destination:</label>
+      <input type="text" class="form-control" name="fruit" required>
+    </div><br>
+    <div class="form-group">
+      <label for="fruitImage">Link to a photo of fruit:</label>
+      <input type="text" class="form-control" name="fruitImage" required>
+    </div><br>
+    <div class="form-group">
+      <label for="attraction">What is a Popular Attraction Here?</label>
+      <input type="text" class="form-control" name="attraction" required>
+    </div><br>
+    <div class="form-group">
+      <label for="attractionImage">Link to a Photo of the Attraction:</label>
+      <input type="text" class="form-control" name="attractionImage" required>
+    </div><br>
+    <div class="form-group">
+      <label for="seSalary">What's the Average Salary of a Software Engineer Here?</label>
+      <input type="number" class="form-control" name="seSalary" required>
+    </div><br>
+    <button type="submit" class="btn btn-primary">Add Destination</button>
+  </form>
+</div>
+  
+<style>
+    .form {
+        padding-top: 10rem;
+    }
+</style>
 
 <%- include('./partials/footer')%>
