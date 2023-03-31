@@ -24,6 +24,7 @@ body {
 	font-family: 'Voces', 'Open Sans', arial, sans-serif;
 	color: #333;
 	font-size: 14px;
+    background-color:lightgrey;
 }
 .projcard-container {
 	margin: 50px 0;
@@ -273,7 +274,7 @@ body {
 }
 
 .nav div.logo a:hover {
-    color: #00E676;
+    color: cornflowerblue;
 }
 
 .nav div.main_list {
@@ -305,7 +306,7 @@ body {
 }
 
 .nav div.main_list ul li a:hover {
-    color: #00E676;
+    color: cornflowerblue;
 }
 
 
