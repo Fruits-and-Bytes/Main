@@ -8,7 +8,8 @@ const destinationSchema = new Schema({
     fruitImage: String,
     seSalary: Number,
     attraction: String,
-    attractionImage: String
+    attractionImage: String,
+    cardDescription: String,
 });
 
 

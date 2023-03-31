@@ -1,0 +1,58 @@
+<%- include('./partials/header')%>
+
+
+<div class="container d-flex justify-content-center">
+<form class="form" action="/" method="POST">
+    <p>We recommend grabbing your photos from <a target="_blank" href="https://unsplash.com/">Unsplash</a></p>
+    <div class="form-group">
+      <label for="name">Country Name:</label>
+      <input type="text" class="form-control" name="name" required>
+    </div><br>
+    <div class="form-group">
+      <label for="destinationImage">Link to a Photo of Destination:</label>
+      <input type="text" class="form-control" name="destinationImage" required>
+    </div><br>
+    <div class="form-group">
+      <label for="fruit">Popular Fruit of the Destination:</label>
+      <input type="text" class="form-control" name="fruit" required>
+    </div><br>
+    <div class="form-group">
+      <label for="fruitImage">Link to a Photo of Fruit:</label>
+      <input type="text" class="form-control" name="fruitImage" required>
+    </div><br>
+    <div class="form-group">
+      <label for="attraction">What is a Popular Attraction Here?</label>
+      <input type="text" class="form-control" name="attraction" required>
+    </div><br>
+    <div class="form-group">
+      <label for="attractionImage">Link to a Photo of the Attraction:</label>
+      <input type="text" class="form-control" name="attractionImage" required>
+    </div><br>
+    <div class="form-group">
+      <label for="seSalary">What's the Average Salary of a Software Engineer Here?</label>
+      <input type="number" class="form-control" name="seSalary" required>
+    </div><br>
+    <div class="form-group">
+      <label for="cardDescription">Brief Description of this Destination:</label>
+      <input type="text" class="form-control" name="cardDescription" required>
+</div><br>
+    <button type="submit" class="btn btn-primary">Add Destination</button>
+  </form>
+</div>
+  
+<style>
+    .form {
+        padding-top: 10rem;
+    }
+
+    body {
+      background-image: url(https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1806&q=80);
+      background-size: cover;
+    }
+
+    div label{
+      font-size: 1.2rem;
+    }
+</style>
+
+<%- include('./partials/footer')%>
