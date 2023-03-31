@@ -8,5 +8,5 @@ exports.destinations = [
     { name: 'Switzerland', fruit: 'Apple', fruitImage: "../img/fruits/apple.jpg", attraction: 'Jungfraujoch - the Top of the World', attractionImage: '../img/attractions/jungfraujoch.jpg', destinationImage: '../img/destinations/switzerland.jpg' , seSalary: 103089  },
     { name: 'Portugal', fruit: 'Passion Fruit', fruitImage: "../img/fruits/passionFruit.jpg", attraction: 'Mosteiro dos Jeronimos', attractionImage: '../img/attractions/mosteiro.jpg', destinationImage: '../img/destinations/portugal.jpg' , seSalary: 26762 },
     { name: 'New Zealand', fruit: 'Kiwifruit', fruitImage: "../img/fruits/kiwifruit.jpg", attraction: 'Fiordland National park and Milford Sound', attractionImage: '../img/attractions/fiordland.jpg', destinationImage: '../img/destinations/new-zealand.jpg' , seSalary: 47248 },
-    { name: 'Taiwan', fruit: 'Pineapple', fruitImage: "../img/fruits/pineapple.jpg", attraction: 'Jiufen Night Market', attractionImage: '../img/attractions/juifen.jpg', destinationImage: '../img/destinations/taiwan.jpg' , seSalary: 100000 }
+    { name: 'Taiwan', fruit: 'Pineapple', fruitImage: "../img/fruits/pineapple.jpg", attraction: 'Night Markets', attractionImage: '../img/attractions/juifen.jpg', destinationImage: '../img/destinations/taiwan.jpg' , seSalary: 100000 }
 ]
