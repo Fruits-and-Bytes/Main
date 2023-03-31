@@ -2,12 +2,10 @@
 
 Fruits & Bytes is a travel-themed app that allows users to explore different countries and their native fruits, as well as the average salary of a software engineer in each country. With the ability to add destinations and login via Google OAuth, Fruits & Bytes makes it easy for users to discover new places and plan their next adventure.
 
+<img src="https://imagizer.imageshack.com/img924/3862/F5szSm.png">
+
 <br><br>
 
-# Screenshots
-
-<img src="url to your image on imgur">
-<img src="url to your image on imgur">
 
 <br><br>
 
@@ -22,12 +20,35 @@ Fruits & Bytes is a travel-themed app that allows users to explore different cou
 - **Passport:** an authentication middleware for Node.js that supports various authentication mechanisms
 
 <br><br>
+#### Our function to delete a destination from the user's wishlist emlpoys traditional JS on HTTP data:
+```async function deleteDestination(req, res, next) {
+    try {
+        const destName = req.params.name;
+        req.user.wishlist.forEach(function(d) {
+            if(d.name === destName) {
+                const index = req.user.wishlist.indexOf(d);
+                req.user.wishlist.splice(index, 1);
+            }
+        });
+        await req.user.save();
+        res.redirect('/wishlist');
+    } catch(err) {
+        console.log(err);
+        return next(err);
+    }
+};
+```
+
+<br><br>
 
 # Additonal Resources
 
 ### Trello
 
-[Click to view Trello](https://trello.com/invite/b/G35PcUN2/ATTIa4601109d99ed33b63e6f7350cf08a405433F3A7/destinations)
+Our Starting Point Trello View
+<img src="https://imagizer.imageshack.com/img924/5126/Zp5Nff.png">
+
+## [Click to view the current Trello](https://trello.com/invite/b/G35PcUN2/ATTIa4601109d99ed33b63e6f7350cf08a405433F3A7/destinations)
 
 ### Wireframe
 
@@ -44,18 +65,16 @@ Fruits & Bytes is a travel-themed app that allows users to explore different cou
 
 [Click to View Fruits & Bytes!](https://fruitsandbytes.herokuapp.com/)
 
+<img src="https://imagizer.imageshack.com/img924/5241/DTEF6U.png">
+
 <br><br>
 
 # Next Steps
 
 
-- In the future we plan to implement an API feature for IP camera's that overlook views of the destination in Fruites % Bytes...
+- In the future we plan to implement an API feature for IP camera's that overlook views of the destination in Fruites and Bytes.
 
-- Another future enhancement we plan on implementing is a comments/likes section for users to engage with... 
+- Another future enhancement we plan on implementing is a comments/likes section for users to engage with.
 
-[![JavaScript](https://img.shields.io/badge/--F7DF1E?logo=javascript&logoColor=000)](https://www.javascript.com/)
 
-[![Visual Studio Code](https://img.shields.io/badge/--007ACC?logo=visual%20studio%20code&logoColor=ffffff)](https://code.visualstudio.com/)
-
-[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
-
+![VS Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white) ![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white) ![MongoDb](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge) ![Bootsrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
