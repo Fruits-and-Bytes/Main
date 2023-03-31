@@ -12,6 +12,4 @@ const destinationSchema = new Schema({
     cardDescription: String,
 });
 
-
-
 module.exports = mongoose.model('Destination', destinationSchema);
