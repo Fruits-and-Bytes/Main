@@ -12,7 +12,7 @@
                   <div class="projcard-title"><%= d.name %></div>
                   <div class="projcard-subtitle"><%= `Learn more about ${d.name}`%></div>
                   <div class="projcard-bar"></div>
-                  <div class="projcard-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                  <div class="projcard-description"><%= d.cardDescription %></div>
                   <div class="projcard-tagbox">
                     <span class="projcard-tag"><%= d.fruit %></span>
                   </div>
@@ -22,12 +22,20 @@
           </a>
           <% }); %>      
     <% if(user) { %>
-      <a href="/new">Add A Country to Make this List More Comprehensive!</a>
+      <a href="/new" class="add-section">Add A Country to Make this List More Comprehensive!</a>
     <% } else { %>
-      <a href="/auth/google" class="login">Login to Add Countries to this List!</a>
+      <a href="/auth/google" class="login add-section">Login to Add Countries to this List!</a>
       <% } %>
+      <br></br>
     <!-- ---- -->
       
+<style>
+  .add-section {
+    font-size: 2.5rem;
+  }
+  
+</style>
+
     <script>
       document.querySelectorAll(".projcard-description").forEach(function(box) {
         $clamp(box, {clamp: 6});
