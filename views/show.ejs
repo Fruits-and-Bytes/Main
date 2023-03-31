@@ -39,18 +39,79 @@
     </button>
   </div>
 
-  <h1>Average Software Engineer Salary</h1>
-  <p><%= destination.seSalary %></p>  
+<!-- Software Engineer Salary Section below -->
 
-    <form method="POST" action="/<%= destination._id %>/show?_method=PUT">
-        <input name="newSalary" type="number" value="Type Here">
-        <input type="submit" value="Update Salary">
+<style>
+.custom-input-width {
+  width:400px;
+}
+
+.label-margin {
+  margin-top: 2rem;
+}
+
+.card-style {
+  width: 80%;
+  margin: 5rem auto;
+}
+
+.container-md label {
+  font-size: 28px;
+}
+
+.container-md button {
+  width: 20rem;
+  height: 3rem;
+}
+
+.wishlist-button {
+  margin: 4rem auto;
+}
+
+.wishlist-button button {
+  width: 25rem;
+  height: 5rem;
+  border-radius: 2.5rem;
+  font-size: 1.5rem;
+  background-color: darkred;
+  border-color: darkred;
+}
+
+.wishlist-button button:hover {
+  background-color:palevioletred;
+}
+
+</style>
+
+  <div class="projcard projcard-customcolor card-style" style="--projcard-color: #F5AF41;">
+        <div class="projcard-innerbox">
+          <img class="projcard-img" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80" />
+          <div class="projcard-textbox">
+            <div class="projcard-title">Average Software Engineer Salary</div>
+            <div class="projcard-subtitle">Referenced in US Dollars</div>
+            <div class="projcard-bar"></div>
+            <div class="projcard-description"><%=`You can expect the standard Software Engineer here to make $${destination.seSalary} a year.`%></div>
+            <div class="projcard-tagbox">
+              <span class="projcard-tag">2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-md">
+        <form class="mx-auto text-center"  method="POST" action="/<%= destination._id %>/show?_method=PUT">
+          <div class="mb-3">
+            <label class="form-label label-margin">Submit a New Average Salary</label>
+            <input name ="newSalary" type="number" class="form-control custom-input-width mx-auto">
+          </div>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+      </div>
+
+  <div class="text-center wishlist-button">
+    <form method="POST" action="/wishlist?id=<%= destination._id %>">        
+      <button class="btn btn-primary" type="submit">Add Country to Wishlist</button>
     </form>
+  </div>
 
-
-    <br></br>
-    <form method="POST" action="/wishlist?id=<%= destination._id %>">
-        
-    <button type="submit">Add to Wishlist</button>
-    </form>
 <%- include('./partials/footer')%>
