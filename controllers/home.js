@@ -8,7 +8,8 @@ async function index(req, res) {
 
 async function show(req, res) {
   const destination = await Destination.findById(req.params.id);
-  res.render('show', { title: Destination, destination })
+  console.log(destination);
+  res.render('show', { title: destination.name, destination })
 }
 
 
